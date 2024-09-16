@@ -9,7 +9,7 @@ public class Main {
     try (var br = new BufferedReader(new InputStreamReader(System.in))) {
       var p = new Processor();
       System.out.println("じゃんけんをします。");
-      var attendees = p.setup(br);
+      var attendees = p.setupAttendees(br, p.setupAttendeesCount(br));
       p.play(br, attendees);
     } catch (IOException e) {
       throw new RuntimeException(e);
