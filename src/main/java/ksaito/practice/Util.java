@@ -17,6 +17,6 @@ public class Util {
    * @return .
    */
   public static boolean isOtherThanYes(String input) {
-    return Util.isY(input);
+    return !Util.isY(input);
   }
 }

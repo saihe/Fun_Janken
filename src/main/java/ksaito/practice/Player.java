@@ -15,8 +15,7 @@ public class Player extends Attendee {
       this.name = "Player";
     }
     System.out.printf("%s　この名前で決定しますか？[Y/n]%n", this.name);
-    var input = br.readLine();
-    if (input.equalsIgnoreCase("Y") || input.isEmpty()) {
+    if (Util.isOtherThanYes(br.readLine())) {
       this.inputName(br);
     }
   }

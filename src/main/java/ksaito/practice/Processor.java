@@ -23,8 +23,7 @@ public class Processor {
 
     var attendeeCount = Integer.parseInt(input);
     System.out.printf("参加人数は %d 人ですね？[Y/n]%n", attendeeCount);
-    input = br.readLine();
-    if (Util.isOtherThanYes(input)) {
+    if (Util.isOtherThanYes(br.readLine())) {
       return this.setupAttendeesCount(br);
     }
     return attendeeCount;
@@ -54,13 +53,12 @@ public class Processor {
     }
 
     System.out.printf("プレイヤー人数は %d 人ですね？[Y/n]%n", playerCount);
-    input = br.readLine();
-    if (Util.isOtherThanYes(input)) {
+    if (Util.isOtherThanYes(br.readLine())) {
       return this.setupAttendees(br, attendeesCount);
     }
 
     for (var i = 0; i < attendeesCount; i++) {
-      var attendee = (i > playerCount) ? new COM() : new Player();
+      var attendee = (i < playerCount) ? new Player() : new COM();
       attendee.inputName(br);
       res.add(attendee);
     }
